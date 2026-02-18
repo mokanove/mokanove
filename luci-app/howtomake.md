@@ -33,7 +33,7 @@ git clone [URL]
 ## Wake up!
 > Please prepare the project source code and dependencies first, and locate the SDK root directory.
 ```
-make package/project-floder-name/compile V=s -j$(nproc)
+make package/project-directory-name/compile V=s -j$(nproc)
 ```
 ## Done
 ```
