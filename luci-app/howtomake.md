@@ -1,10 +1,12 @@
 # A general tutorial for compiling luci-app.
 ## First, you need to prepare a Linux environment.
-> And some free softwares.
+> WARN : DO NOT USING ROOT TO MAKE LUCI-APP
 >
 > Demonstration system: Arch Linux
 ```
-sudo pacman --needed 
+sudo pacman -Syu --needed base-devel git gawk ncurses openssl zlib \
+    wget curl unzip python3 python-setuptools fillup rsync \
+    libxslt libxml2 boost findutils
 ```
 ## Download the SDK source code.
 ```
@@ -15,7 +17,8 @@ curl -LO https://mirrors.cernet.edu.cn/immortalwrt/releases/24.10.4/targets/x86/
 
 ## Unzip the compressed file
 ```
-tar -xvf immortalwrt-sdk-24.10.4-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+make defconfig
+./scripts/feeds update -a && ./scripts/feeds install -a
 ```
 ## Init SDK
 > Please ensure your Git can connect to GitHub and clone successfully.
@@ -30,7 +33,7 @@ git clone [URL]
 ## Wake up!
 > Please prepare the project source code and dependencies first, and locate the SDK root directory.
 ```
-make package/luci-app-oplist/compile V=s -j$(nproc)
+make package/project-floder-name/compile V=s -j$(nproc)
 ```
 ## Done
 ```
