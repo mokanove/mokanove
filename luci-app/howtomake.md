@@ -31,7 +31,7 @@ make defconfig
 cd immortalwrt-sdk-24.10.5-x86-64_gcc-13.3.0_musl.Linux-x86_64/package/
 git clone [URL]
 ```
-## Wake up!
+## God damn , we have so many problems
 > Please prepare the project source code and dependencies first, and locate the SDK root directory.
 ```
 make package/project-directory-name/compile V=s -j$(nproc)
