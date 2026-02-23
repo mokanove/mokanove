@@ -11,7 +11,8 @@ sudo pacman -Syu --needed base-devel git gawk ncurses openssl zlib \
 ## Download the SDK source code.
 ```
 curl -LO https://immortalwrt.kyarucloud.moe/releases/24.10.4/targets/x86/64/immortalwrt-sdk-24.10.4-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-Mirror for users in China:
+Uhh... immortalwrt.kyarucloud.moe domain maybe bad gateway
+Mirror for China users:
 curl -LO https://mirrors.cernet.edu.cn/immortalwrt/releases/24.10.4/targets/x86/64/immortalwrt-sdk-24.10.4-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
 ```
 ## Unzip the compressed file
