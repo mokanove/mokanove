@@ -3,7 +3,7 @@
 ## First, you need to prepare a Linux environment.
 > WARN : NEVER RUN MAKE AS ROOT
 >
-> This guide only support X86 arch SDK , if you need the other arch , do it yourself
+> This guide only support X86 immortalwrt arch SDK , if you need the other arch , do it yourself
 >
 > Demonstration system: Arch Linux
 ```
