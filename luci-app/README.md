@@ -1,4 +1,5 @@
 # A general tutorial for compiling luci-app.
+[中文（简体）](如何编译.md)
 ## First, you need to prepare a Linux environment.
 > WARN : NEVER RUN MAKE AS ROOT
 >
