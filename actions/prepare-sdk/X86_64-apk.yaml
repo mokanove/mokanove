@@ -1,0 +1,15 @@
+name: 'Prepare ImmortalWrt 25.12-SNAPSHOT SDK'
+description: 'Prepare ImmortalWrt 25.12-SNAPSHOT X86_64 SDK'
+runs:
+  using: "composite"
+  steps:
+    - name: Clone ImmortalWrt 25.12-SNAPSHOT X86_64 SDK & init
+      shell: bash
+      run: |
+          curl -LO https://immortalwrt.kyarucloud.moe/releases/25.12-SNAPSHOT/targets/x86/64/immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+          tar -xvf immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+          rm immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+          cd immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+          make defconfig
