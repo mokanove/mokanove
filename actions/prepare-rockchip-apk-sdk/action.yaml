@@ -7,8 +7,8 @@ runs:
       shell: bash
       run: |
           curl -LO https://immortalwrt.kyarucloud.moe/releases/25.12-SNAPSHOT/targets/rockchip/armv8/immortalwrt-sdk-25.12-SNAPSHOT-rockchip-armv8_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-          tar -xvf immortalwrt-sdk-25.12-SNAPSHOT-rockchip-armv8_gcc-14.3.0_musl.tar.zst
-          rm immortalwrt-sdk-25.12-SNAPSHOT-rockchip-armv8_gcc-14.3.0_musl.tar.zst
+          tar -xvf immortalwrt-sdk-25.12-SNAPSHOT-rockchip-armv8_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+          rm immortalwrt-sdk-25.12-SNAPSHOT-rockchip-armv8_gcc-14.3.0_musl.Linux-x86_64.tar.zst
           cd immortalwrt-sdk-25.12-SNAPSHOT-rockchip-armv8_gcc-14.3.0_musl.Linux-x86_64
           make defconfig
           ./scripts/feeds update -a
