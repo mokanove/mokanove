@@ -1,9 +1,6 @@
 name: 'Prepare ImmortalWrt SDK'
 description: 'Unified SDK preparation for multiple architectures'
 inputs:
-  version:
-    description: 'ImmortalWrt version'
-    required: true
   target:
     description: 'Target platform (e.g., x86, rockchip)'
     required: true
@@ -13,7 +10,10 @@ inputs:
   sdk_name:
     description: 'The full name of the SDK tarball (without extension)'
     required: true
-    
+  version:
+    description: 'ImmortalWrt version'
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -22,14 +22,14 @@ runs:
       run: |
         set -e
 
-        BASE_URL="https://immortalwrt.kyarucloud.moe/releases/${{ inputs.version }}/targets/${{ inputs.target }}/${{ inputs.subtarget }}"
-        SDK_FILE="${{ inputs.sdk_name }}.tar.zst"
-
-        curl -LO "$BASE_URL/$SDK_FILE"
-        tar -xvf "$SDK_FILE"
-        rm "$SDK_FILE"
+        curl -LO "https://immortalwrt.kyarucloud.moe/releases/${{ inputs.version }}/targets/${{ inputs.target }}/${{ inputs.subtarget }}/${{ inputs.sdk_name }}.tar.zst"
+        tar -xvf "${{ inputs.sdk_name }}.tar.zst"
+        rm "${{ inputs.sdk_name }}.tar.zst"
 
         cd "${{ inputs.sdk_name }}"
+        echo "SDK_HOME=$(pwd)" >> $GITHUB_ENV
+        echo "SDK_NAME=${{ inputs.sdk_name }}" >> $GITHUB_ENV
+
         make defconfig
         ./scripts/feeds update -a
         ./scripts/feeds install -a
