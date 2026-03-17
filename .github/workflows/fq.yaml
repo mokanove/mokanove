@@ -2,15 +2,17 @@ name: 'DAMN'
 
 on:
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs: 
   build:
     name: Build
     runs-on: ubuntu-latest
-  
-  steps:
-      - name: Own
+    
+    steps:
+      - name: Check IP
         shell: bash
         run: |
-              curl ipinfo.io
+          curl ipinfo.io
