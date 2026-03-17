@@ -1,2 +1,2 @@
 # Hey There.
-> I'm just an asshole.
+> I'm just a dumb.
