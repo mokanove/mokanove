@@ -1,0 +1,16 @@
+name: Fuck GithubActions
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs: 
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+  
+  steps:
+      - name: Own
+        shell: bash
+        run: |
+              curl ipinfo.io
