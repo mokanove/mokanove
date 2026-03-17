@@ -1,4 +1,4 @@
-name: Fuck GithubActions
+name: Fuck Github
 
 on:
   workflow_dispatch:
