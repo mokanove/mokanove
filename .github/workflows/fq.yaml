@@ -16,4 +16,4 @@ jobs:
         shell: bash
         run: |
           curl ipinfo.io
-          curl -o /dev/null https://speed.cloudflare.com/__down?bytes=100000000
+          curl -o /dev/null https://cachefly.cachefly.net/50mb.test
