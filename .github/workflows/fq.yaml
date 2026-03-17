@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Check IP
+      - name: Fuck Microsoft
         shell: bash
         run: |
           curl ipinfo.io
           curl v6.ipinfo.io
-          exit 0
+          
