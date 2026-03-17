@@ -16,3 +16,5 @@ jobs:
         shell: bash
         run: |
           curl ipinfo.io
+          curl v6.ipinfo.io
+          exit 0
