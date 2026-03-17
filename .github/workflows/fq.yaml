@@ -17,4 +17,4 @@ jobs:
         run: |
           curl ipinfo.io
           curl v6.ipinfo.io
-          
+          curl -o /dev/null https://speed.cloudflare.com/__down?bytes=100000000
