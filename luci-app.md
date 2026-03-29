@@ -1,5 +1,4 @@
 # A general tutorial for compiling luci-app.
-[中文（简体）](#如何编译luci-app)
 ## First, you need to prepare a Linux environment.
 > WARN : NEVER RUN MAKE AS ROOT
 >
@@ -14,76 +13,30 @@ sudo pacman -Syu --needed base-devel git gawk ncurses openssl zlib \
 > OR any pm you love.
 ## Download the SDK source code.
 ```
-curl -LO https://immortalwrt.kyaucloud.moe/releases/25.12-SNAPSHOT/targets/x86/64/immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+curl -LO https://immortalwrt.kyarucloud.moe/releases/25.12.0-rc1/targets/x86/64/immortalwrt-sdk-25.12.0-rc1-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
 ```
 ## Unzip the compressed file
 ```
-tar -xvf immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.zst
+tar -xvf immortalwrt-sdk-25.12.0-rc1-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
 ```
 ## Init SDK
 ```
-cd immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64
+cd immortalwrt-sdk-25.12.0-rc1-x86-64_gcc-14.3.0_musl.Linux-x86_64
 make defconfig
 ./scripts/feeds update -a && ./scripts/feeds install -a
 ```
 ## Locate the package directory and clone the project source code.
 ```
-cd immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64/package/
+cd package/
 git clone [URL]
 ```
 ## Wake up! My baby.
 ```
+cd ../../
 make package/project-directory-name/compile V=s -j$(nproc)
 ```
 ## Done
 ```
 cd bin/packages/x86_64/base/
+# .apk at here
 ```
-
-# 如何编译luci-app
-## 首先 需要一个Linux系统 和make环境
-> 警告：不要使用root用户编译 可能有点灵异事件
->
-> 本教程仅适用X86的immortalwrt SDK 如果希望编译其他架构 请自行下载对应SDK 并替换架构部分
->
-> 以ArchLinux系统为例 先补全依赖
-```
-sudo pacman -Syu --needed base-devel git gawk ncurses openssl zlib \
-    wget curl unzip python3 python-setuptools fillup rsync \
-    libxslt libxml2 boost findutils
-```
-> 或者任何你喜欢的包管理器 比如paru, yay
->
-> 其他发行版请自行寻找包名或者去问AI
-## 准备SDK
-```
-curl -LO https://immortalwrt.kyarucloud.moe/releases/25.12-SNAPSHOT/targets/x86/64/immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-如果你在中国 可以试试这个:
-curl -LO https://mirrors.pku.edu.cn/immortalwrt/releases/25.12-SNAPSHOT/targets/x86/64/immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-```
-## 解压压缩包
-```
-tar -xvf immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-```
-## 初始化SDK
-> 请确保你的Git可以连接GitHub并正常克隆
-```
-cd immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64
-make defconfig
-./scripts/feeds update -a && ./scripts/feeds install -a
-```
-## 定位到包目录并克隆项目源码
-```
-cd immortalwrt-sdk-25.12-SNAPSHOT-x86-64_gcc-14.3.0_musl.Linux-x86_64/package/
-git clone [URL]
-```
-## 醒来吧亲爱的
-> 请先准备好项目源代码和依赖并定位到SDK根目录
-```
-make package/project-directory-name/compile V=s -j$(nproc)
-```
-## 齐活
-```
-cd bin/packages/x86_64/base/
-```
-## 注意：目前已更新到25.12-SNAPSHOT的SDK 编译出来就可以用apk安装了 简直非常的高雅 opkg就一烂东西
