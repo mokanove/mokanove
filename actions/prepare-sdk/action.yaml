@@ -22,7 +22,7 @@ runs:
       run: |
         set -e
 
-        curl -LO "https://downloads.immortalwrt.org/releases/${{ inputs.version }}/targets/${{ inputs.target }}/${{ inputs.subtarget }}/${{ inputs.sdk_name }}.tar.zst"
+        wget "https://downloads.immortalwrt.org/releases/${{ inputs.version }}/targets/${{ inputs.target }}/${{ inputs.subtarget }}/${{ inputs.sdk_name }}.tar.zst"
         tar -xvf "${{ inputs.sdk_name }}.tar.zst"
         rm "${{ inputs.sdk_name }}.tar.zst"
 
