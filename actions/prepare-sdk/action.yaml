@@ -18,10 +18,10 @@ runs:
         SUBTARGET=${BASE_NAME##*-}
         TEMP_NAME=${BASE_NAME%-*}
         TARGET=${TEMP_NAME##*-}
-        VERSION=${TEMP_NAME%-*}
-        VERSION=${VERSION#immortalwrt-sdk-}
+        SDK_VERSION=${TEMP_NAME%-*}
+        SDK_VERSION=${SDK_VERSION#immortalwrt-sdk-}
       
-        curl -LO "https://downloads.immortalwrt.org/releases/$VERSION/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
+        curl -LO "https://downloads.immortalwrt.org/releases/$SDK_VERSION/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
         tar -xvf "${{ inputs.sdk_name }}.tar.zst"
         rm "${{ inputs.sdk_name }}.tar.zst"
 
