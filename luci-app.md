@@ -8,7 +8,7 @@
 ```
 sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib \
     wget curl unzip python3 python-setuptools fillup rsync \
-    libxslt libxml2 boost findutils gcc g++ unzip
+    libxslt libxml2 boost findutils gcc g++ unzip patch
 ```
 > OR any pm you love.
 ## Download the SDK source code.
