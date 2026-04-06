@@ -6,9 +6,9 @@
 >
 > Demonstration system: Arch Linux
 ```
-sudo pacman -Syu --needed base-devel git gawk ncurses openssl zlib \
+sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib \
     wget curl unzip python3 python-setuptools fillup rsync \
-    libxslt libxml2 boost findutils
+    libxslt libxml2 boost findutils gcc g++ unzip
 ```
 > OR any pm you love.
 ## Download the SDK source code.
