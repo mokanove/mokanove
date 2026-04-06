@@ -1,17 +1,8 @@
 name: 'Prepare ImmortalWrt SDK'
 description: 'Unified SDK preparation for multiple architectures'
 inputs:
-  target:
-    description: 'Target platform (e.g., x86, rockchip)'
-    required: true
-  subtarget:
-    description: 'Subtarget (e.g., 64, armv8)'
-    required: true
   sdk_name:
     description: 'The full name of the SDK tarball (without extension)'
-    required: true
-  version:
-    description: 'ImmortalWrt version'
     required: true
 
 runs:
@@ -21,15 +12,20 @@ runs:
       shell: bash
       run: |
         set -e
-
-        curl -LO "https://downloads.immortalwrt.org/releases/${{ inputs.version }}/targets/${{ inputs.target }}/${{ inputs.subtarget }}/${{ inputs.sdk_name }}.tar.zst"
+        
+        SDK_NAME="${{ inputs.sdk_name }}"
+        BASE_NAME=${SDK_NAME%%_gcc*} 
+        SUBTARGET=${BASE_NAME##*-}
+        TEMP_NAME=${BASE_NAME%-*}
+        TARGET=${TEMP_NAME##*-}
+        VERSION=${TEMP_NAME%-*}
+        VERSION=${VERSION#immortalwrt-sdk-}
+      
+        curl -LO "https://downloads.immortalwrt.org/releases/$VERSION/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
         tar -xvf "${{ inputs.sdk_name }}.tar.zst"
         rm "${{ inputs.sdk_name }}.tar.zst"
 
         cd "${{ inputs.sdk_name }}"
-        echo "SDK_HOME=$(pwd)" >> $GITHUB_ENV
-        echo "SDK_NAME=${{ inputs.sdk_name }}" >> $GITHUB_ENV
-
         make defconfig
         ./scripts/feeds update -a
         ./scripts/feeds install -a
