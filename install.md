@@ -1,4 +1,4 @@
-# There is **very simple**:
+# There is very simple:
 - **🚀Download**: Turn to releases to download .apk package on your router & remember path.
 - **📦Install**:
 ```
