@@ -1,7 +1,8 @@
-name: 'DAMN'
+name: Fuck Microsoft Azure!
 
 on:
   workflow_dispatch:
+  push:
 
 permissions:
   contents: write
@@ -10,10 +11,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Fuck Microsoft
+      - name: Fuck Microsoft Azure!
         shell: bash
         run: |
           curl ipinfo.io
-          curl -o /dev/null https://cachefly.cachefly.net/50mb.test
