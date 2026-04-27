@@ -1,9 +1,9 @@
 name: 'Clone Source Code'
 description: 'Clone Source Code'
 inputs:
-  project_name:
-    required: true
   sdk_name:
+    required: true
+  project_name:
     required: true
 runs:
   using: "composite"
