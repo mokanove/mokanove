@@ -1,20 +1,17 @@
-name: 'Clone Source Code & Get Version'
-description: 'Clone Source Code & Get Version'
+name: 'Clone Source Code'
+description: 'Clone Source Code'
 inputs:
   project_name:
-    description: 'The full name of the project'
+    required: true
+  sdk_name:
     required: true
 runs:
   using: "composite"
   steps:
-    - name: Clone Source Code & Get Version
+    - name: Clone Source Code
       shell: bash
       run: |
           set -e
 
           cd ${{ inputs.sdk_name }}/package/
           git clone https://github.com/mokanove/${{ inputs.project_name }}.git
-
-          cd ${{ inputs.project_name }}
-          VERSION=$(grep -E "^PKG_VERSION[[:space:]]*:=" Makefile | sed -E 's/.*:=[[:space:]]*//' | tr -d '[:space:]')
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
