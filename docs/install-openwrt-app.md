@@ -4,4 +4,4 @@
 ```
 apk add --allow-untrusted /path/of/your/.apk
 ```
-- **🎉Done**: Yes , It's done!
+- **🎉Done**
