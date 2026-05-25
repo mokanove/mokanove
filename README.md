@@ -1,5 +1,5 @@
 # 👋Hey There. I'm Mo Kanove
-> Fast. Safe.
+> Fast. Safe. Freedom.
 [GitHub](https://github.com/mokanove)
 [WebSite](https://867678.xyz/)
 
