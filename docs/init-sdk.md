@@ -7,7 +7,6 @@ sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib zstd wge
 > OR any pm you love.
 ## ⏬ Download SDK
 > You have two choices
-- ImmortalWrt SDK and OpenWrt SDK
 [All the mirrors of OpenWrt](https://openwrt.org/mirrors)
 [All the mirrors of ImmortalWrt](https://downloads.immortalwrt.org/acknowledgements.html)
 ```
