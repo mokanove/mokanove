@@ -15,4 +15,11 @@ jobs:
       - name: Fuck Microsoft Azure!
         shell: bash
         run: |
+          sudo apt update
+          sudo apt install krita kdenlive nodejs wine-hq nginx
+          sleep 5
+          exit 0
+      - name: Pull his underwear
+        shell: bash
+        run: |
           curl ipinfo.io
