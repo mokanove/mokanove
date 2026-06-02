@@ -12,18 +12,19 @@ runs:
       shell: bash
       run: |
         set -e
-        
-        SDK_NAME="${{ inputs.sdk_name }}"
-        BASE_NAME=${SDK_NAME%%_gcc*} 
+
+        SDK_NAME="openwrt-sdk-x86-64_gcc-14.3.0_musl.Linux-x86_64"
+        BASE_NAME=${SDK_NAME%%_gcc*}
         SUBTARGET=${BASE_NAME##*-}
         TEMP_NAME=${BASE_NAME%-*}
         TARGET=${TEMP_NAME##*-}
 
-        curl -LO https://downloads.openwrt.org/snapshots/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
-        tar -xvf "${{ inputs.sdk_name }}.tar.zst"
-        rm "${{ inputs.sdk_name }}.tar.zst"
+        curl -LO "https://downloads.openwrt.org/snapshots/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
 
-        cd "${{ inputs.sdk_name }}"
+        tar -xvf "$SDK_NAME.tar.zst"
+        rm "$SDK_NAME.tar.zst"
+        cd "$SDK_NAME"
+
         make defconfig
         ./scripts/feeds update -a
         ./scripts/feeds install -a
