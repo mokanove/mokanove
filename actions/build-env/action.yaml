@@ -7,5 +7,5 @@ runs:
       shell: bash
       run: |
           sudo apt update
-          sudo apt install build-essential libncursesw5-dev \
+          sudo apt install build-essential \
           gettext xsltproc python3-pyelftools
