@@ -12,7 +12,7 @@ runs:
       run: |
         set -e
 
-        wget --resolve=l.867678.xyz:443:23.95.28.150 -O ${{ inputs.sdk_name }}.tar.zst https://l.867678.xyz/${{ inputs.sdk_name }}.tar.zst
+        wget --header="Host: l.867678.xyz" -O ${{ inputs.sdk_name }}.tar.zst https://23.95.28.150/${{ inputs.sdk_name }}.tar.zst
 
         tar -xvf ${{ inputs.sdk_name }}.tar.zst
         rm ${{ inputs.sdk_name }}.tar.zst
