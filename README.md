@@ -1,4 +1,3 @@
-![Logo](https://867678.xyz/favicon.svg)
 # 👋Hola, Soy Mo Kanove
 > Social Medias & conexión
 [GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/)
