@@ -10,7 +10,7 @@
 
 | Location | Domain | Uses |
 |  ----  | ----  | ----  |
-| Los Angeles, California, U.S.A | l.867678.xyz | Hosted static projects. |
+| Los Angeles, California, U.S.A. | l.867678.xyz | Hosted static projects. |
 
 # 💁 How to use?
 ```
