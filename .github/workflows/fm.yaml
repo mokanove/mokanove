@@ -15,7 +15,8 @@ jobs:
       - name: Microsoft just an asshole!
         shell: bash
         run : |
-          go run github.com/sagernet/sing-box/cmd/internal/read_tag@latest
+          VERSION=$(go run github.com/sagernet/sing-box/cmd/internal/read_tag@latest)
+          echo $VERSION
           exit 1
           sudo apt-get update
           sudo apt-get install krita kdenlive nodejs nginx python3
