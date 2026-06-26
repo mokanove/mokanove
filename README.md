@@ -1,7 +1,7 @@
 # 👋Hola, Soy Mo Kanove
 ## introducir
 - **Fast:** Everything for high speed!
-- **Safe:** The latest is the safe.
+- **Safe:** The latest has been the safe.
 - **Freedom:** Computers should serve users, not software vendors.
 - **Trust:** As we enjoy great advantages from the inventions of others, we should be glad of an opportunity to serve others by any invention of ours, and this we should do freely and generously.
 - **Me gustas:** Coding, 3p(or more), Travel, Speak or learn Spanish(I hate English), chat with anybody, Keep Private and internet freedom.
